@@ -1,0 +1,17 @@
+<% include ../partials/header %>
+
+<div class="container">
+	<h1 style="text-align:center;">Edit Comment</h1>
+	<form action="/games/<%=game_id%>/comments/<%=comment._id%>?_method=PUT" method="POST">
+		<div style="width:30%;margin:25px auto;">
+			<div class="form-group">
+				<input class="form-control" type="text" name="comment[text]" placeholder="text" value="<%=comment.text%>">
+			</div>
+			<button class="btn btn-lg btn-block btn-primary">Submit!</button>
+			<a href="/games">Games</a>
+		</div>
+	</form>
+</div>
+
+
+<% include ../partials/footer %>

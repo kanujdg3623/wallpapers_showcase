@@ -1,0 +1,29 @@
+<% include partials/header %>
+
+<%if(currentUser && String(currentUser._id)!=String(user._id) && !user.followers.some(function(follower){ return follower.equals(currentUser._id); })){%>
+<form action='/follow/<%=user._id%>' method='GET'>
+	<button class="btn btn-lg btn-block btn-primary">FOLLOW!</button>
+</form>
+<%}%>
+<div class="row">
+	<div class="col-md-4">
+		<h1><%=user.firstName+" "+user.lastName%></h1>
+		<div class="thumbnail">
+			<img src="<%=user.avatar%>" alt="user profile image">
+			<div class="caption"><a href="malito:<%=user.email%>"><%=user.email%></a></div>
+		</div>
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, felis tempor laoreet malesuada, ex enim malesuada dolor, et condimentum tortor arcu nec augue. Nulla vel ante id nisl gravida porttitor a id mauris. Fusce eget magna a mi ultrices gravida. In eu mi at eros vestibulum eleifend. Aenean non magna tortor. Nunc venenatis sapien id nibh gravida fringilla. Nulla pretium consequat neque eget blandit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut consectetur sit amet massa in rhoncus. Vestibulum malesuada posuere est, a eleifend dolor lacinia mollis. Suspendisse vitae odio ipsum.
+
+Phasellus gravida vitae ex nec facilisis. Nulla ac lacus nec risus eleifend consectetur. Vivamus sollicitudin sapien quis nunc euismod, at pellentesque erat fermentum. Cras ac sollicitudin nibh. Nulla facilisi. Cras vulputate, augue quis ultrices consectetur, sapien velit pharetra eros, a pharetra odio lacus et justo. Curabitur egestas nunc nec dictum faucibus. Pellentesque consequat rutrum augue et imperdiet.
+	</div>
+	<div class="col-md-8">
+		<h3><%=user.username%>'s games:</h3>
+		<ul>
+		<% game.forEach(function(gm){%>
+		<li><a href="/games/<%=gm._id%>"><%=gm.name%></a></li>
+		<%}); %>
+		</ul>
+	</div>
+</div>
+
+<% include partials/footer %>
