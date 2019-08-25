@@ -1,0 +1,34 @@
+<% include ../partials/header %>
+
+<div class="container">
+<div class="jumbotron">
+  <h1 class="display-4">This is the games page!</h1>
+  <p class="lead">View our hand picked games form all over internet</p>
+  <hr class="my-4">
+  <a class="btn btn-primary btn-lg" href="/games/new" role="button">Add new game</a>
+  <p>
+	<form action="/games" method="GET" class="form-inline">
+		<div class="form-group">
+			<input type="text" name="search" placeholder="Game seach.." class="form-control">
+			<input type="submit" value="Search" class="btn btn-default">
+		</div>
+	</form>
+  </p>
+</div>
+
+	<div class="row">
+	<% games.forEach(function(game){ %>
+		<div class="col-md-4 col-sm-6">
+			<div class="container">
+				<img src="<%=game.image%>" class="img-thumbnail">
+					<h4 align="center"><%=game.name%></h4>
+				<p align="center">
+					<a href="/games/<%= game._id%>" class="btn btn-primary">More Info</a>
+				</p>
+			</div>
+		</div>
+	<%});%>
+</div>
+</div>
+
+<% include ../partials/footer %>

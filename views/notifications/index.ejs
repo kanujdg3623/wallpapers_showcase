@@ -1,0 +1,7 @@
+<% include ../partials/header %>
+
+<%allNotifications.forEach(function(notification){%>
+	<li><a href="/games/<%=notification.gameId%>"><%=notification.username%> created a game</a></li>
+<%});%>
+
+<% include ../partials/footer %>

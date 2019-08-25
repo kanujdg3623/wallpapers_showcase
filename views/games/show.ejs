@@ -1,0 +1,38 @@
+<% include ../partials/header %>
+
+<div class="container">
+	<h1 align="center"><%=game.name%></h1>
+	<img class="img-thumbnail" src="<%=game.image%>">
+	<p><%=game.desc%></p>
+	<p><em>Submitted By <a href='/users/<%=game.author.id%>'><%=game.author.username%></a></em></p>
+	<%if(currentUser && game.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){%>
+		<a class="btn btn-warning" href="/games/<%=game._id%>/edit">Edit</a>
+		<form id="delete-form" action="/games/<%=game._id%>?_method=DELETE" method="POST">
+		<button class="btn btn-danger">Delete</button>
+		</form>
+	<%}%>
+	<p align="right">
+	<a class="btn btn-success" href="/games/<%=game._id%>/comments/new">add new comment</a>
+	</p>
+</div>
+<hr class="container">
+<div class="container">
+	<% game.comments.forEach(function(comment){%>
+	<p style="display:inline;">
+	<strong><%=comment.author.username%></strong>-<%=comment.text%>
+	</p>
+	<div style="display:inline;">
+		<%if(currentUser && comment.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){%>
+		<a class="btn btn-outline-warning btn-sm" 
+		href="/games/<%=game._id%>/comments/<%=comment._id%>/edit">Edit</a>
+		<form  id="delete-form" action="/games/<%=game._id%>/comments/<%=comment._id%>?_method=DELETE" method="POST">
+			<input type="submit" class="btn btn-outline-danger btn-sm" value="Delete">
+		</form>
+		<%}%>
+	</div>
+	<br/>
+	<%})%>
+
+</div>
+
+<% include ../partials/footer %>
