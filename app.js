@@ -14,7 +14,7 @@ var commentRoutes=require("./routes/comments"),
 	gamesRoutes=require("./routes/games"),
 	indexRoutes=require("./routes/index");
 
-mongoose.connect("mongodb://localhost/localgames",{ useNewUrlParser: true });
+mongoose.connect("mongodb+srv://kdg:24654321@cluster0.s1ld3.mongodb.net/cluster0?retryWrites=true&w=majority",{ useNewUrlParser: true });
 app.set("view engine","ejs");
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(__dirname+"/public"));
