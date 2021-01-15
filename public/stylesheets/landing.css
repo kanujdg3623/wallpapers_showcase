@@ -10,7 +10,7 @@ body {
 #landing-header h1 {
   color: #fff;
 }
-.slideshow { 
+.slideshow {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -21,7 +21,7 @@ body {
   margin: 0;
   padding: 0;
 }
-.slideshow li { 
+.slideshow li {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -32,30 +32,30 @@ body {
   background-repeat: no-repeat;
   opacity: 0;
   z-index: 0;
-  animation: imageAnimation 50s linear infinite; 
+  animation: imageAnimation 50s linear infinite;
 }
-.slideshow li:nth-child(1) { 
-  background-image: url(https://images.wallpaperscraft.com/image/star_wars_battlefront_electronic_arts_105865_1280x720.jpg) 
+.slideshow li:nth-child(1) {
+  background-image: url(https://images.wallpaperscraft.com/image/trees_silhouettes_night_197024_300x168.jpg)
 }
-.slideshow li:nth-child(2) { 
-  background-image: url(https://images.wallpaperscraft.com/image/the_elder_scrolls_online_sword_of_the_night_warrior_assassin_95957_1280x720.jpg);
-  animation-delay: 10s; 
+.slideshow li:nth-child(2) {
+  background-image: url(https://images.wallpaperscraft.com/image/mug_marshmallow_sparklers_197022_300x168.jpg);
+  animation-delay: 10s;
 }
-.slideshow li:nth-child(3) { 
-  background-image: url(https://images.wallpaperscraft.com/image/halo_5_guardians_343_industries_master_chief_105941_1280x720.jpg);
-  animation-delay: 20s; 
+.slideshow li:nth-child(3) {
+  background-image: url(https://images.wallpaperscraft.com/image/spruce_trees_snow_197021_300x168.jpg);
+  animation-delay: 20s;
 }
-.slideshow li:nth-child(4) { 
-  background-image: url(https://images.wallpaperscraft.com/image/the_witcher_3_wild_hunt_the_witcher_cd_projekt_99850_1280x720.jpg);
-  animation-delay: 30s; 
+.slideshow li:nth-child(4) {
+  background-image: url(https://images.wallpaperscraft.com/image/leaves_palm_plant_197018_300x168.jpg);
+  animation-delay: 30s;
 }
-.slideshow li:nth-child(5) { 
-  background-image: url(https://images.wallpaperscraft.com/image/assassins_creed_game_collage_characters_99328_1280x720.jpg);
-  animation-delay: 40s; 
+.slideshow li:nth-child(5) {
+  background-image: url(https://images.wallpaperscraft.com/image/tree_man_silhouette_197015_300x168.jpg);
+  animation-delay: 40s;
 }
-@keyframes imageAnimation { 
-  0% { 
-    opacity: 0; 
+@keyframes imageAnimation {
+  0% {
+    opacity: 0;
     animation-timing-function: ease-in;
   }
   10% {
